@@ -1,0 +1,75 @@
+import React from 'react';
+
+const Home = () => {
+  return (
+    <div
+  style={{
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: '10px',
+    fontFamily: 'Arial, sans-serif',
+    backgroundImage: url('zero.jpg'),
+    backgroundAttachment: 'fixed', 
+    backgroundSize: 'cover', 
+    backgroundPosition: 'center', 
+    color: '#333',
+    textAlign: 'center',
+  }}
+>
+
+      <div
+        style={{
+          maxWidth: '800px',
+          backgroundColor: 'rgba(255, 255, 255, 0.85)',
+          borderRadius: '10px',
+          boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)', 
+          padding: '30px',
+        }}
+      >
+        <h1 style={{ color: '#4CAF50', marginBottom: '20px', fontSize: '2.5rem' }}>Welcome to Zero Waste Product</h1>
+        <p style={{ marginBottom: '20px', fontSize: '1.5rem' }}>
+          At <strong>Zero Waste Product</strong>, we are committed to helping you live a more sustainable lifestyle by
+          offering eco-friendly products that reduce environmental impact and promote a waste-free future. Our products
+          are designed with reusability, compostability, and sustainability in mind.
+        </p>
+        <h2 style={{ color: '#4CAF50', marginTop: '20px', fontSize: '2rem' }}>Why Choose ZeroWaste Products?</h2>
+        <ul
+          style={{
+            listStyleType: 'disc',
+            margin: '20px auto',
+            padding: '0',
+            display: 'inline-block',
+            textAlign: 'left',
+            fontSize: '1.2rem',
+            color: '#444',
+          }}
+        >
+          <li>
+            <strong>Eco-Friendly Materials:</strong> All products are made from biodegradable, organic, or recyclable
+            materials to minimize waste.
+          </li>
+          <li>
+            <strong>Reusable and Durable:</strong> Our items are designed for long-term use, reducing the need for
+            single-use alternatives.
+          </li>
+          <li>
+            <strong>Contributing to Sustainability:</strong> By choosing ZeroWaste products, you're playing a vital role
+            in protecting the planet for future generations.
+          </li>
+        </ul>
+        <h2 style={{ color: '#4CAF50', marginTop: '30px', fontSize: '2rem' }}>Our Mission</h2>
+        <p style={{ marginBottom: '20px', fontSize: '1.5rem' }}>
+          Our mission is to inspire individuals and communities to adopt sustainable practices, one product at a time.
+          We believe that every small change adds up to create a significant positive impact on the environment.
+        </p>
+        <p style={{ fontSize: '1.5rem' }}>
+          Together, let’s take a step towards a cleaner, greener, and healthier planet. Thank you for being part of this
+          journey with ZeroWaste Product!
+        </p>
+      </div>
+    </div>
+  );
+};
+
+export default Home;

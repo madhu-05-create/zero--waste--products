@@ -1,0 +1,28 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+
+const Header = () => {
+  return (
+    <header style={{
+      backgroundColor: '#d8f3dc',
+      padding: '10px 20px',
+      display: 'flex',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+      position: 'sticky',
+      top: 0
+    }}>
+      <div style={{ fontSize: '20px', fontWeight: 'bold', color: 'black' }}>
+        ZeroWaste
+      </div>
+      <nav style={{ display: 'flex', gap: '15px' }}>
+        <Link to="/" style={{ textDecoration: 'none', color: 'black' }}>Home</Link>
+        <Link to="/products" style={{ textDecoration: 'none', color: 'black' }}>Products</Link>
+        <Link to="/login" style={{ textDecoration: 'none', color: 'black' }}>Login</Link>
+        <Link to="/contact" style={{ textDecoration: 'none', color: 'black' }}>Contact</Link>
+      </nav>
+    </header>
+  );
+};
+
+export default Header;

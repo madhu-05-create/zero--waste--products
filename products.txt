@@ -1,0 +1,81 @@
+import React from 'react';
+import { useState } from 'react';
+import BuyPage from './BuyPage'; 
+
+const ProductPage = () => {
+  const [selectedProduct, setSelectedProduct] = useState(null);
+
+  const products = [
+    { id: 1, name: 'Reusable Bamboo Cutlery Set', description: 'Eco-friendly and reusable bamboo cutlery for sustainable living.', price: '₹499', image: 'pic1.jpeg' },
+    { id: 2, name: 'ZeroWaste Grocery Bags', description: 'Durable and reusable grocery bags made from organic materials.', price: '₹349', image: 'pic2.jpeg' },
+    { id: 3, name: 'Compostable Food Containers', description: 'Biodegradable food containers for sustainable takeout.', price: '₹599', image: 'pic3.jpeg' },
+    { id: 4, name: 'Eco-Friendly Water Bottle', description: 'Reusable water bottle made from sustainable materials.', price: '₹899', image: 'pic4.jpeg' },
+    { id: 5, name: 'Reusable Silicone Food Covers', description: 'Flexible and reusable food covers for sustainable storage.', price: '₹299', image: 'pic5.jpeg' },
+    { id: 6, name: 'Bamboo Toothbrush', description: 'Biodegradable bamboo toothbrush for sustainable oral care.', price: '₹199', image: 'pic6.jpeg' },
+    { id: 7, name: 'Organic Cotton Produce Bags', description: 'Breathable and reusable produce bags for fresh groceries.', price: '₹399', image: 'pic7.jpeg' },
+    { id: 8, name: 'Stainless Steel Straws', description: 'Durable and reusable straws made of stainless steel.', price: '₹299', image: 'pic8.jpeg' },
+    { id: 9, name: 'Biodegradable Cleaning Sponge', description: 'Eco-friendly cleaning sponge made from natural fibers.', price: '₹149', image: 'pic9.jpeg' },
+    { id: 10, name: 'Compost Bin for Kitchen', description: 'Compact compost bin for reducing food waste.', price: '₹1,299', image: 'pic10.jpeg' },
+  ];
+
+  const handleBuyNow = (product) => {
+    setSelectedProduct(product); 
+  }
+  return (
+    <div style={{ margin: '20px' }}>
+      <h1 style={{ textAlign: 'center', color: '#4CAF50' }}>ZeroWaste Products</h1>
+      <div
+        style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+          gap: '20px',
+        }}
+      >
+        {products.map((product) => (
+          <div
+            key={product.id}
+            style={{
+              border: '1px solid #ccc',
+              borderRadius: '8px',
+              textAlign: 'center',
+              backgroundColor: '#f9f9f9',
+              padding: '15px',
+              boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+            }}
+          >
+            <img
+              src={product.image}
+              alt={product.name}
+              style={{
+                width: '100%',
+                height: '150px',
+                objectFit: 'cover',
+                borderRadius: '8px 8px 0 0',
+              }}
+            />
+            <h2 style={{ color: '#4CAF50' }}>{product.name}</h2>
+            <p>{product.description}</p>
+            <p style={{ fontWeight: 'bold', color: '#4CAF50' }}>{product.price}</p>
+            <button
+              style={{
+                backgroundColor: '#4CAF50',
+                color: 'white',
+                border: 'none',
+                padding: '10px 20px',
+                borderRadius: '5px',
+                cursor: 'pointer',
+              }}
+              onClick={() => handleBuyNow(product)}
+            >
+              Buy Now
+            </button>
+          </div>
+        ))}
+      </div>
+
+      {selectedProduct && <BuyPage product={selectedProduct} />}
+    </div>
+  );
+};
+
+export default ProductPage;

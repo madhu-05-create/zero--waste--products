@@ -1,0 +1,58 @@
+import React, { useState } from 'react';
+
+const BuyPage = ({ product }) => {
+  const [isPaid, setIsPaid] = useState(false);
+
+  const handlePayment = () => {
+    setIsPaid(true);
+  };
+
+  return (
+    <div style={{ margin: '20px', textAlign: 'center' }}>
+      {isPaid && <div style={{ backgroundColor: '#4CAF50', color: 'white', padding: '10px' }}>Paid</div>}
+      <h2 style={{ color: '#4CAF50' }}>Buy {product.name}</h2>
+      <p>{product.description}</p>
+      <p style={{ fontWeight: 'bold', color: '#4CAF50' }}>{product.price}</p>
+      <form style={{ margin: '20px' }}>
+        <input
+          type="text"
+          placeholder="Your Name"
+          style={{ padding: '10px', margin: '5px', width: '300px' }}
+          required
+        />
+        <br />
+        <input
+          type="email"
+          placeholder="Your Email"
+          style={{ padding: '10px', margin: '5px', width: '300px' }}
+          required
+        />
+        <br />
+        <input
+          type="text"
+          placeholder="Your Address"
+          style={{ padding: '10px', margin: '5px', width: '300px' }}
+          required
+        />
+        <br />
+        <button
+          type="button"
+          style={{
+            backgroundColor: '#4CAF50',
+            color: 'white',
+            border: 'none',
+            padding: '10px 20px',
+            borderRadius: '5px',
+            cursor: 'pointer',
+            margin: '10px',
+          }}
+          onClick={handlePayment}
+        >
+          Pay Now
+        </button>
+      </form>
+    </div>
+  );
+};
+
+export default BuyPage;

@@ -1,0 +1,72 @@
+import React from 'react';
+
+const Login = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    alert('Sign In button clicked!');
+  };
+
+  return (
+    <div style={{ marginTop: '20px' }}>
+      <h1>Login</h1>
+      <form
+        onSubmit={handleSubmit}
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          gap: '10px',
+          marginTop: '20px',
+        }}
+      >
+        <div>
+          <label
+            htmlFor="username"
+            style={{
+              marginRight: '10px',
+            }}
+          >
+            Username:
+          </label>
+          <input
+            type="text"
+            id="username"
+            name="username"
+            required
+            style={{ padding: '5px', fontSize: '16px' }}
+          />
+        </div>
+        <div>
+          <label
+            htmlFor="password"
+            style={{ marginRight: '10px' }}
+          >
+            Password:
+          </label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            required
+            style={{ padding: '5px', fontSize: '16px' }}
+          />
+        </div>
+        <button
+          type="submit"
+          style={{
+            padding: '10px 20px',
+            backgroundColor: '#d8f3dc',
+            border: 'none',
+            cursor: 'pointer',
+            fontSize: '16px', 
+            borderRadius: '5px',
+          }}
+        >
+          Sign In
+        </button>
+      </form>
+    </div>
+  );
+};
+
+export default Login;

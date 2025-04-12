@@ -1,0 +1,63 @@
+import React from 'react';
+
+const Contact = () => {
+  const contactDetails = [
+    {
+      name: 'ZeroWaste Product',
+      website: 'https://zerowaste-product.com/contact-us/',
+      email: 'info@zerowaste-product.com',
+      phone: '9876543210',
+      address: 'Sakthi Street, Erode',
+    },
+  ];
+
+  return (
+    <>
+      <h1 style={{ color: '#4CAF50', marginBottom: '30px', textAlign: 'center' }}>
+        Contact Us
+      </h1>
+      <p
+        style={{
+          fontSize: '1.2rem',
+          marginBottom: '30px',
+          textAlign: 'center',
+          fontFamily: 'Arial, sans-serif',
+          color: '#333',
+        }}
+      >
+        Here are Some ZeroWaste-related contacts. Feel free to reach out!
+      </p>
+      {contactDetails.map((detail, index) => (
+        <div
+          key={index}
+          style={{
+            fontFamily: 'Arial, sans-serif',
+            color: '#333',
+          }}
+        >
+          <h2 style={{ color: '#4CAF50' }}>{detail.name}</h2>
+          <p>
+            <strong>Website:</strong>{' '}
+            <a href={detail.website} style={{ color: '#4CAF50' }}>
+              {detail.website}
+            </a>
+          </p>
+          <p>
+            <strong>Email:</strong>{' '}
+            <a href={`mailto:${detail.email}`} style={{ color: '#4CAF50' }}>
+              {detail.email}
+            </a>
+          </p>
+          <p>
+            <strong>Phone:</strong> {detail.phone}
+          </p>
+          <p>
+            <strong>Address:</strong> {detail.address}
+          </p>
+        </div>
+      ))}
+    </>
+  );
+};
+
+export default Contact;
